@@ -24,6 +24,7 @@ function getLocationModel(): array|string
 {
   global $opt;
   $ipAddr = $_SERVER['REMOTE_ADDR'];
+  echo $ipAddr;
 
   // get location
   $urlLocation = URL_GEO
