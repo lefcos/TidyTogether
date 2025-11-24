@@ -16,7 +16,6 @@ require_once "model/addPostModel.php";
 require_once "model/addMediaModel.php";
 require_once "model/addMarksModel.php";
 
-require_once "model/getLocationModel.php";
 require_once "model/getPostModel.php";
 require_once "model/getReportModel.php";
 require_once "model/getProfileModel.php";

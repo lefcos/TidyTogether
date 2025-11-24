@@ -15,10 +15,10 @@
       <input type="text" id="neighbourhood" name="postNeighbourhood" required>
 
       <label for="city">City:</label>
-      <input type="text" id="city" name="postCity" value="<?php echo $location["city"]; ?>" required>
+      <input type="text" id="city" name="postCity" required>
 
       <label for="country">Country:</label>
-      <input type="text" id="country" name="postCountry" value="<?php echo $location["country"]; ?>" required>
+      <input type="text" id="country" name="postCountry" required>
   
       <label for="photo">Photo (optional):</label>
       <input type="file" id="photo" name="postPhoto[]" accept="image/jpg, image/png, image/webm, video/mp4" multiple>
@@ -58,28 +58,5 @@
   </div>
 </div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const modal = document.getElementById("reportModal");
-    const openBtn = document.getElementById("openReportBtn");
-    const closeBtn = document.querySelector(".close");
-    
-    function openModal() {
-      modal.style.display = "block";
-      document.body.style.overflow = 'hidden';
-    }
-    
-    function closeModal() {
-      modal.style.display = "none";
-      document.body.style.overflow = 'auto';
-    }
-    
-    if (openBtn) {
-      openBtn.onclick = openModal;
-    }
-    
-    if (closeBtn) {
-      closeBtn.onclick = closeModal;
-    }
-  });
-</script>
+<script src="javascript/clientForm/guessInitialLocation.js"></script>
+<script src="javascript/clientForm/openFormFetch.js"></script>
