@@ -7,14 +7,12 @@ require_once "model/getAreasModel.php";
 function civilianFallbackPage(int $id): void
 {
   $tags = getTagModel();
-  $location = getLocationModel();
   $recyclingAreas = getAreasModel(null);
 
   $mainCity = getMainCityModel($id);
   $position = processLocationModel($mainCity);
 
   isError($tags);
-  isError($location);
   isError($position);
   if (str_starts_with($mainCity, "error")) {
     isError($mainCity);
