@@ -8,12 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = 'hidden';
 
     const { address, city, country, neighbourhood } = await guessInitialLocation();
-      console.log(address);
-      console.log(city);
-      console.log(country);
-      console.log(neighbourhood);
-
-
     document.getElementById("address").value = address ?? "";
     document.getElementById("city").value = city ?? "";
     document.getElementById("country").value = country ?? "";
