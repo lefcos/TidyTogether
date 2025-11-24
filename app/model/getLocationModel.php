@@ -1,6 +1,5 @@
 <?php
 
-define("URL_IP", "https://api.ipify.org/?format=json");
 define("URL_GEO", "http://ip-api.com/json/");
 
 $opt = [
@@ -11,31 +10,6 @@ $opt = [
   CURLOPT_FAILONERROR => true,
   CURLOPT_FOLLOWLOCATION => false
 ];
-
-function getIpAdress(): array|string
-{
-  global $opt;
-  $cIp = curl_init(URL_IP);
-  curl_setopt_array($cIp, $opt);
-  $response = curl_exec($cIp);
-
-  $codeHttp = curl_getinfo($cIp, CURLINFO_RESPONSE_CODE);
-  curl_close($cIp);
-
-  if ($codeHttp != 200) {
-    http_response_code($codeHttp);
-    return "error - getIpAddress(): " . $codeHttp;
-  }
-
-  $ipData = json_decode($response, true);
-  // $ipAddrLocal = $_SERVER["REMOTE_ADDR"];
-
-  if (!isset($ipData["ip"])) {
-    return "error - getIpAddress(): JSON response failed";
-  }
-
-  return $ipData["ip"];
-}
 
 /**
  * returns an array consisting of:
@@ -49,7 +23,7 @@ function getIpAdress(): array|string
 function getLocationModel(): array|string
 {
   global $opt;
-  $ipAddr = getIpAdress();
+  $ipAddr = $_SERVER['REMOTE_ADDR'];
 
   // get location
   $urlLocation = URL_GEO
