@@ -11,6 +11,16 @@ $opt = [
   CURLOPT_FOLLOWLOCATION => false
 ];
 
+function getRemoteIPAddress() {
+  if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+      return $_SERVER['HTTP_CLIENT_IP'];
+  } else if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) { 
+      return $_SERVER['HTTP_X_FORWARDED_FOR'];
+  }
+  
+  return $_SERVER['REMOTE_ADDR'];
+}
+
 /**
  * returns an array consisting of:
     country
@@ -23,7 +33,7 @@ $opt = [
 function getLocationModel(): array|string
 {
   global $opt;
-  $ipAddr = $_SERVER['REMOTE_ADDR'];
+  $ipAddr = getRemoteIPAddress();
   echo $ipAddr;
 
   // get location
