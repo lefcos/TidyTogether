@@ -8,17 +8,34 @@
       <label for="description">Description:</label>
       <input type="text" id="description" name="postDescription">
 
-      <label for="address">Address:</label>
-      <input type="text" id="address" name="postAddress" required>
+      <label for="country">Country:</label>
+      <input type="text" id="country" name="postCountry" required>
+      <select id="countrySelect">
+        <?php
+          foreach (PublicCountries::get("public/countries+cities.json")
+              as $country => $cities) {
+            echo "<option value=\"" . $country . "\">" . $country . "</option>\n";
+          }
+        ?>
+      </select>
+
+      <label for="city">City:</label>
+      <input type="text" id="city" name="postCity" required>
+      <select>
+        <script src="javascript/getCitiesFromCountry.js">
+          const countrySelectTag = document.getElementById("countrySelect");
+          countrySelectTag.addEventListener("change", () => {
+            const cities = getCitiesFromCountry(countrySelectTag.value);
+            cities.foreach(addCityOption);
+          }
+        </script>
+      </select>
 
       <label for="neighbourhood">Neighbourhood:</label>
       <input type="text" id="neighbourhood" name="postNeighbourhood" required>
 
-      <label for="city">City:</label>
-      <input type="text" id="city" name="postCity" required>
-
-      <label for="country">Country:</label>
-      <input type="text" id="country" name="postCountry" required>
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="postAddress" required>
   
       <label for="photo">Photo (optional):</label>
       <input type="file" id="photo" name="postPhoto[]" accept="image/jpg, image/png, image/webm, video/mp4" multiple>
