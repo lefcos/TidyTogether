@@ -1,7 +1,6 @@
 <div align="center">
 
-
-  <img src="doc/tidytogether-logo.png" alt="logo" width="200" height="auto" />
+  <img src="doc/TidyTogether.logo.png" alt="logo" width="200" height="auto" />
   <h1>TidyTogether</h1>
   
   <p>
@@ -65,13 +64,11 @@
 ### :dart: Features
 
 - three different perspectives
-
   - posting procedures for civilians
   - approval of their requests by supervisor (Mayor)
   - the executive forces responses (SalubrIs)
 
 - map geolocation of waste collecting ares
-
   - city preference for every user
   - favorite zones and profile management
 
