@@ -77,9 +77,13 @@ if (isset($_SESSION[CONN])) {
   exit();
 }
 
+$requestedPage = $_POST[PAGE] ?? null;
+
 // session not set && page switcher
-if (isset($_POST[PAGE]) && $_POST[PAGE] == "Signup") {
+if ($requestedPage == "Signup") {
   require_once "view/logup.php";
-} else {
+} elseif ($requestedPage == "Login") {
   require_once "view/login.php";
+} else {
+  require_once "view/landing.php";
 }
