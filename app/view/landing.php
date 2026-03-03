@@ -25,9 +25,26 @@
                     <?php require 'view/components/svg/githubSvg.php'; ?>
                 </a></li>
             <li class="header_li">
-                <a href="https://www.linkedin.com/in/petrubraha/" target="_blank" class="header_a header_a--linkedin">
-                    <?php require 'view/components/svg/linkedinSvg.php'; ?>
-                </a></li>
+                <button id="open">      
+                    <span class="header_a header_a--linkedin">
+                        <?php require 'view/components/svg/linkedinSvg.php'; ?>
+                    </span>
+                </button>
+
+                <div class="modal-container" id = "modal_container">
+                    <div class="linkedin-modal">
+                        <span>Connect with us:</span>
+                        <ul class="linkedin-profiles">
+                            <li class="linkedin-profile">
+                                <a href="https://www.linkedin.com/in/petrubraha/" target="_blank" class="linkedin-link">Brahă Petru</a>
+                            </li>
+                            <li class="linkedin-profile">
+                                <a href="https://www.linkedin.com/in/leftercosmin/" target="_blank" class="linkedin-link">Lefter Cosmin</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
         </ul>
     </nav>
 </header>
@@ -61,3 +78,25 @@
 </body>
 
 </html>
+
+<script>
+    const open = document.getElementById("open");
+    const modalcontainer = document.getElementById("modal_container");
+    
+    open.addEventListener('click', () => {
+        modalcontainer.classList.toggle('show');
+    })
+
+    // open.addEventListener('click', () => {
+    //     if (open.contains(e.target) && modalcontainer.contains(e.target)) {
+    //         modalcontainer.classList.remove('show');
+    //     }
+    // })
+
+    window.addEventListener('click', (e) => {
+        if (!open.contains(e.target) && !modalcontainer.contains(e.target)) {
+            modalcontainer.classList.remove('show');
+        }
+    });
+
+</script>
