@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap');
-
+/*could be optimizied*/
 :root {
     --ecogreen: #1F3A26;
     --eggshell: #FFF8F3;
@@ -96,7 +96,7 @@ body{
 .header_a--github {
     display: flex;
     align-items: center;
-    opacity: 0.85;
+    opacity: .85;
 }
 
 .header_a--github svg{
@@ -108,7 +108,7 @@ body{
     display: inline-block;
     align-items: center;
     gap: 8px;
-    opacity: 0.85;
+    opacity: .85;
 }
 
 .header_a--linkedin svg{
@@ -260,6 +260,38 @@ button:active {
     height: 100%;
     object-fit: cover;
     border-radius: 40px;
+}
+
+.textwithbackground {
+    display: inline-block;
+    padding: 2px 15px;
+    border-radius: 20px;
+    transition: all 0.5s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    color: var(--ecogreen);
+    position: relative;
+    z-index: 1;
+    min-width: 120px;
+    text-align: center;
+}
+
+.textwithbackground.has-bg{
+    color: var(--eggshell);
+}
+
+.textwithbackground.has-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.fade-out {
+    opacity: 0;
+    transform: translateY(10px);
 }
 
 @media only screen and (max-width: 1250px){
