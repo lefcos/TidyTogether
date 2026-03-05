@@ -262,6 +262,11 @@ button:active {
     border-radius: 40px;
 }
 
+.content_title .textwithbackground.has-bg {
+    color: var(--eggshell) !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
 .textwithbackground {
     display: inline-block;
     padding: 0.1em 0.5em;
@@ -274,6 +279,7 @@ button:active {
     z-index: 1;
     min-width: 120px;
     text-align: center;
+    overflow: hidden;
 }
 
 .textwithbackground.has-bg{
@@ -285,7 +291,7 @@ button:active {
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
+    border-radius: inherit;
     z-index: -1;
 }
 
