@@ -115,7 +115,7 @@
                 citySlot.classList.remove('has-bg');
             }
             citySlot.classList.remove('fade-out');
-        }, 300); 
+        }, 500); 
     }
     setInterval(updateCity, 4000);
 </script>

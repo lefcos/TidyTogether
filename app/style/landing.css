@@ -39,7 +39,7 @@ body{
 }
 
 .header{
-    width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
@@ -48,7 +48,6 @@ body{
     border-radius: 40px;
     background-color: var(--ecogreen);
     height: 6em;
-
 }
 
 .header_ul{
@@ -81,6 +80,7 @@ body{
     color: var(--eggshell);
     font-size: 2em;
     font-weight: lighter;
+    white-space: nowrap;
 }
 
 .ext_link{
@@ -264,7 +264,7 @@ button:active {
 
 .textwithbackground {
     display: inline-block;
-    padding: 2px 15px;
+    padding: 0.1em 0.5em;
     border-radius: 20px;
     transition: all 0.5s ease-in-out;
     background-size: cover;
@@ -294,7 +294,7 @@ button:active {
     transform: translateY(10px);
 }
 
-@media only screen and (max-width: 1250px){
+@media (max-width: 1250px){
     .image {
         width: 0;
     }
@@ -303,7 +303,19 @@ button:active {
     }
 }
 
-@media only screen and (max-width: 1000px){
+@media (max-width: 1000px){
+    .header{
+        height: 4em;
+    }
+
+    .header_text{
+        font-size: 1.5em;
+    }
+
+    .header_logo{
+        width: 50px;
+    }
+
     .image-half{
         width: 0;
         height: 0;
@@ -314,7 +326,7 @@ button:active {
     }
 }
 
-@media only screen and (max-width: 750px){
+@media (max-width: 750px){
     .header_text{
         font-size: 1em;
     }
@@ -328,7 +340,7 @@ button:active {
     }
 }
 
-@media only screen and (max-width: 560px){
+@media (max-width: 560px){
     .header_a--github svg{
         width: 30px;
         height: 30px;
@@ -343,11 +355,58 @@ button:active {
         margin-left: 0rem;
         gap: 1rem;
     }
+
+    .body-buttons{
+        font-size: 15px;
+    }
+
+    .description-line{
+        font-size: 16px;
+    }
+
+    .content_title{
+        font-size: 2.7em;
+        margin-top: 9em;
+    }
 }
 
-@media only screen and (max-width: 500px){
+@media (max-width: 480px){
     .content_title{
-        margin-top: 6em;
+        margin-top: 14em;
         font-size: 2em;
+    }
+
+    .header_text{
+        display: none;
+    }
+}
+
+@media (max-width: 400px){
+    .content_title{
+        margin-top: 18em;
+        font-size: 1.4em;
+    }
+
+    .header_text{
+        display: none;
+    }
+}
+
+@media (max-height: 700px) {
+    .content_title{ 
+        font-size: 2.5em; 
+        margin-top: 1rem; 
+    }
+    
+    .header{ 
+        height: 4em; 
+    }
+
+    .header_logo{ 
+        width: 50px; 
+    }
+
+    .description-line{ 
+        font-size: 16px; 
     }
 }
