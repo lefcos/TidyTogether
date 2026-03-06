@@ -1,3 +1,6 @@
+// Syntax documentation: https://dbml.dbdiagram.io/docs/
+// Visualization: https://dbdiagram.io/d/TidyTogether-68206bc85b2fc4582f139b99
+
 ENUM UserRole {
   civilian // regular individual
   supervisor // decision factor
